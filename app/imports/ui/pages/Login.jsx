@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Container, Form, Grid, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Message, Segment, Image } from 'semantic-ui-react';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -54,6 +54,7 @@ export default class Login extends React.Component {
             <div className="login">
               <Form onSubmit={this.submit}>
                 <Segment stacked className="test" style={gold}>
+                  <Image src="/images/UH Logo.png" size='medium'/>
                   <Form.Input
                     label="Email"
                     id="signin-form-email"
