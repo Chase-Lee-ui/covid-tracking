@@ -40,6 +40,7 @@ export default class Login extends React.Component {
     const gold = {
       backgroundColor: '#AA986D',
       borderRadius: '25px',
+      padding: '31px',
     };
     // const style variable for UH Logo
     const image = {
@@ -54,14 +55,14 @@ export default class Login extends React.Component {
       // Form for user to login. Added Grid element to the lower portion of the form to allow alignment of text.
       <div className="login-background">
         <Container id="signin-page" centered>
-          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+          <Grid textAlign="center" verticalAlign="middle" centered columns={2} stackable>
             <Grid.Column>
               <div className="login">
                 <Form onSubmit={this.submit}>
                   <Segment stacked className="test" style={gold}>
-                    <Grid>
+                    <Grid stackable>
                       <Grid.Column width={5} style={image}>
-                        <Image src="/images/UH Logo.png" size='small' circular/>
+                        <Image src="/images/UH Logo.png" size='small' circular centered/>
                       </Grid.Column>
                       <Grid.Column width={10}>
                         <Form.Input
@@ -84,15 +85,14 @@ export default class Login extends React.Component {
                           type="password"
                           onChange={this.handleChange}
                         />
-                      </Grid.Column>
-                    </Grid>
-                    <Grid stackable>
-                      <Grid.Column width={5}></Grid.Column>
-                      <Grid.Column width={2}>
-                        <Form.Button id="signin-form-submit" content="Login" size="medium"/>
-                      </Grid.Column>
-                      <Grid.Column width={8}>
-                        <p className="login-register">Need an account? Register <Link id='signup' to='/signup'>here </Link></p>
+                        <Grid>
+                          <Grid.Column width={5}>
+                            <Form.Button id="signin-form-submit" content="Login" size="medium"/>
+                          </Grid.Column>
+                          <Grid.Column width={11}>
+                            <p className="login-register" style={{ paddingTop: '8px' }}>Need an account? Register <Link id='signup' to='/signup'>here </Link></p>
+                          </Grid.Column>
+                        </Grid>
                       </Grid.Column>
                     </Grid>
                   </Segment>
