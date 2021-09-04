@@ -20,14 +20,13 @@ import Signout from '../pages/Signout';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
-    return (
+    const LoggedInRoutes = () => (
       <Router>
         <div>
           <NavBar/>
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signup" component={Signup}/>
-            <Route path="/signin" component={Login}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
@@ -38,6 +37,16 @@ class App extends React.Component {
           <Footer/>
         </div>
       </Router>
+    );
+
+    return (
+      <Router>
+        <Switch>
+          <Route path="/signin" component={Login}/>
+          <Route component={LoggedInRoutes}/>
+        </Switch>
+      </Router>
+
     );
   }
 }
