@@ -25,7 +25,7 @@ class App extends React.Component {
         <div>
           <NavBar/>
           <Switch>
-            <Route exact path="/" component={Landing}/>
+            <Route exact path="/landing" component={Landing}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
@@ -42,7 +42,7 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/signin" component={Login}/>
+          <Route path="/" component={Login}/>
           <Route component={LoggedInRoutes}/>
         </Switch>
       </Router>
