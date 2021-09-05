@@ -39,6 +39,7 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
+        <div className="body">
       <Container id="signup-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
@@ -68,7 +69,7 @@ class Signup extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  label="uhID"
+                  label="UH ID"
                   id="signup-form-uhID"
                   icon="lock"
                   iconPosition="left"
@@ -94,6 +95,7 @@ class Signup extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+  </div>
     );
   }
 }
