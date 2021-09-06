@@ -13,7 +13,6 @@ import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
-// import Signin from '../pages/Signin';
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
@@ -26,9 +25,7 @@ class App extends React.Component {
         <div>
           <NavBar/>
           <Switch>
-            <Route exact path="/" component={Landing}/>
             <Route exact path="/home" component={Home}/>
-            <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
