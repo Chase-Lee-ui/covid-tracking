@@ -35,7 +35,7 @@ export default class Login extends React.Component {
 
   // Render the signin form.
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/landing' } };
+    const { from } = this.props.location.state || { from: { pathname: '/home' } };
     // const style variable for login box
     const gold = {
       backgroundColor: '#AA986D',
