@@ -12,20 +12,20 @@ import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
-import Signin from '../pages/Signin';
+// import Signin from '../pages/Signin';
+import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
-    return (
+    const LoggedInRoutes = () => (
       <Router>
         <div>
           <NavBar/>
           <Switch>
-            <Route exact path="/" component={Landing}/>
-            <Route path="/signin" component={Signin}/>
+            <Route exact path="/landing" component={Landing}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
@@ -37,6 +37,16 @@ class App extends React.Component {
           <Footer/>
         </div>
       </Router>
+    );
+
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route component={LoggedInRoutes}/>
+        </Switch>
+      </Router>
+
     );
   }
 }
