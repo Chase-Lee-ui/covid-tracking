@@ -42,7 +42,7 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" component={Login}/>
+          <Route exact path="/" component={Login}/>
           <Route component={LoggedInRoutes}/>
         </Switch>
       </Router>
