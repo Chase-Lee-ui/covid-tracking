@@ -1,3 +1,14 @@
+.home {
+    background-color: #F5F3ED;
+}
+
+.home-box {
+    border-radius: 25px !important;
+}
+
+.ui.button.gold-button {
+    background-color: #907139 !important;
+}
 
 .body {
     background-color: #F5F3ED;
